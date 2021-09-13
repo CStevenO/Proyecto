@@ -7,4 +7,5 @@
     <fullyQualifiedTypeName name="Modelo.usuarios.MUsuario"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="DataBase.DataConnection"/>
 </qualifiedTypeNameHistroy>

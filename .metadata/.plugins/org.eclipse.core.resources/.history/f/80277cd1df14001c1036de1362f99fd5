@@ -1,0 +1,17 @@
+package DAO;
+
+import java.util.List;
+
+/**
+ * 
+ * @param <T>
+ *
+ */
+
+public abstract interface InterCRUD<T> {
+	public boolean Insertar(T objeto);
+	public List<T> ConsultarTodos(); 
+	public T Consultar(int id);
+	public boolean Actualizar(T objeto);
+	public boolean Eliminar(T objeto);
+}
