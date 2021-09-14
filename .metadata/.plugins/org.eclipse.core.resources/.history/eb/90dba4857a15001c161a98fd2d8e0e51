@@ -55,10 +55,4 @@ public class MUsuario {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
-    public int getRol() {
-    	return rol;
-    }
-    public void setRol(int rol) {
-    	this.rol = rol;
-    }
 }

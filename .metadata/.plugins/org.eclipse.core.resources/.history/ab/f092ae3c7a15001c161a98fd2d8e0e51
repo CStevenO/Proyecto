@@ -1,34 +1,29 @@
 package Modelo.usuarios;
 
-import java.math.BigDecimal;
-
 public class MUsuario {
-	private BigDecimal cedula_usuario;
+	private int cedula_usuario;
     private String email_usuario;
     private String nombre_usuario;
     private String password;
     private String usuario;
-    private int rol;
     public MUsuario(){
-        cedula_usuario = new BigDecimal(0);
+        cedula_usuario = 0;
         email_usuario = "";
         nombre_usuario = "";
         password = "";
         usuario = "";
-        rol = 0;
     }
-    public MUsuario(BigDecimal cedula, String email, String nombre, String password, String usuario, int rol){
+    public MUsuario(int cedula, String email, String nombre, String password, String usuario){
         cedula_usuario = cedula;
         email_usuario = email;
         nombre_usuario = nombre;
         this.password = password;
         this.usuario = usuario;
-        this.rol = rol;
     }
-    public BigDecimal getCedula_usuario() {
+    public int getCedula_usuario() {
         return cedula_usuario;
     }
-    public void setCedula_usuario(BigDecimal cedula_usuario) {
+    public void setCedula_usuario(int cedula_usuario) {
         this.cedula_usuario = cedula_usuario;
     }
     public String getEmail_usuario() {
@@ -54,11 +49,5 @@ public class MUsuario {
     }
     public void setUsuario(String usuario) {
         this.usuario = usuario;
-    }
-    public int getRol() {
-    	return rol;
-    }
-    public void setRol(int rol) {
-    	this.rol = rol;
     }
 }

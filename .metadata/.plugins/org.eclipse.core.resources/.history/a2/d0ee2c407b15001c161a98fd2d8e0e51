@@ -97,7 +97,7 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 			try {
 				conectar();
 				String tx = "UPDATE usuarios SET "
-						+ "email_usuario=?, nombre_usuario=?, password=?, usuario=?, rol=?"
+						+ "email_usuario=?, nombre_usuario=?, password=?, usuario=? rol=?"
 						+ "where cedula_usuario=?";
 				PreparedStatement sentencia = conexion.prepareStatement(tx);
 				sentencia.setString(1, objeto.getEmail_usuario());

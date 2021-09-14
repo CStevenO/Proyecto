@@ -16,16 +16,16 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 			try {
 				conectar();
 				String tx = "INSERT INTO "
-						+ "usuarios (cedula_usuario,email_usuario,nombre_usuario,password,usuario,rol) "
-						+ "VALUES(?,?,?,?,?,?)";
+						+ "usuarios (cedula_usuario,email_usuario,nombre_usuario,password,usuario) "
+						+ "VALUES(?,?,?,?,?)";
 				PreparedStatement sentencia = conexion.prepareStatement(tx);
 				sentencia.setBigDecimal(1, objeto.getCedula_usuario());
 				sentencia.setString(2,objeto.getEmail_usuario());
 				sentencia.setString(3, objeto.getNombre_usuario());
 				sentencia.setString(4, objeto.getPassword());
 				sentencia.setString(5, objeto.getUsuario());
-				sentencia.setInt(6, objeto.getRol());
 				sentencia.executeUpdate();
+				sentencia.setBigDecimal(0, null);
 				desconectar();
 				return true;
 			}
@@ -47,12 +47,11 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 			ResultSet datos = sentencia.executeQuery();
 			while(datos.next()) {
 				MUsuario usuario = new MUsuario();
-				usuario.setCedula_usuario(datos.getBigDecimal("cedula_usuario"));
+				usuario.setCedula_usuario(datos.getInt("cedula_usuario"));
 				usuario.setEmail_usuario(datos.getString("email_usuario"));
 				usuario.setNombre_usuario(datos.getString("nombre_usuario"));
 				usuario.setPassword(datos.getString(datos.getString("password")));
 				usuario.setUsuario(datos.getString("usuario"));
-				usuario.setRol(datos.getInt("rol"));
 				usuarios.add(usuario);
 			}
 			desconectar();
@@ -71,15 +70,14 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 				MUsuario usuario = new MUsuario();
 				String tx = "SELECT * FROM usuarios WHERE cedula_usuario=?";
 				PreparedStatement sentencia = conexion.prepareStatement(tx);
-				sentencia.setBigDecimal(1, id);
+				sentencia.setInt(1, id);
 				ResultSet datos = sentencia.executeQuery();
 				if(datos.next()) {
-					usuario.setCedula_usuario(datos.getBigDecimal("cedula_usuario"));
+					usuario.setCedula_usuario(datos.getInt("cedula_usuario"));
 					usuario.setEmail_usuario(datos.getString("email_usuario"));
 					usuario.setNombre_usuario(datos.getString("nombre_usuario"));
 					usuario.setPassword(datos.getString(datos.getString("password")));
 					usuario.setUsuario(datos.getString("usuario"));
-					usuario.setRol(datos.getInt("rol"));
 				}
 				desconectar();
 				return usuario;
@@ -97,15 +95,14 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 			try {
 				conectar();
 				String tx = "UPDATE usuarios SET "
-						+ "email_usuario=?, nombre_usuario=?, password=?, usuario=?, rol=?"
+						+ "email_usuario=?, nombre_usuario=?, password=?, usuario=? "
 						+ "where cedula_usuario=?";
 				PreparedStatement sentencia = conexion.prepareStatement(tx);
 				sentencia.setString(1, objeto.getEmail_usuario());
 				sentencia.setString(2, objeto.getNombre_usuario());
 				sentencia.setString(3, objeto.getPassword());
 				sentencia.setString(4, objeto.getUsuario());
-				sentencia.setInt(5, objeto.getRol());
-				sentencia.setBigDecimal(6, objeto.getCedula_usuario());
+				sentencia.setInt(5, objeto.getCedula_usuario());
 				sentencia.executeUpdate();
 				desconectar();
 				return true;
@@ -124,7 +121,7 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 				conectar();
 				String tx = "DELETE FROM usuario where cedula_usuario=?";
 				PreparedStatement sentencia = conexion.prepareStatement(tx);
-				sentencia.setBigDecimal(1, objeto.getCedula_usuario());
+				sentencia.setInt(1, objeto.getCedula_usuario());
 				sentencia.executeUpdate();
 				desconectar();
 				return true;

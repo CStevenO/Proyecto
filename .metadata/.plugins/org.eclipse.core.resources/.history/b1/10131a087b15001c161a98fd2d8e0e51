@@ -79,7 +79,6 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 					usuario.setNombre_usuario(datos.getString("nombre_usuario"));
 					usuario.setPassword(datos.getString(datos.getString("password")));
 					usuario.setUsuario(datos.getString("usuario"));
-					usuario.setRol(datos.getInt("rol"));
 				}
 				desconectar();
 				return usuario;
@@ -97,15 +96,14 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 			try {
 				conectar();
 				String tx = "UPDATE usuarios SET "
-						+ "email_usuario=?, nombre_usuario=?, password=?, usuario=?, rol=?"
+						+ "email_usuario=?, nombre_usuario=?, password=?, usuario=? "
 						+ "where cedula_usuario=?";
 				PreparedStatement sentencia = conexion.prepareStatement(tx);
 				sentencia.setString(1, objeto.getEmail_usuario());
 				sentencia.setString(2, objeto.getNombre_usuario());
 				sentencia.setString(3, objeto.getPassword());
 				sentencia.setString(4, objeto.getUsuario());
-				sentencia.setInt(5, objeto.getRol());
-				sentencia.setBigDecimal(6, objeto.getCedula_usuario());
+				sentencia.setBigDecimal(5, objeto.getCedula_usuario());
 				sentencia.executeUpdate();
 				desconectar();
 				return true;

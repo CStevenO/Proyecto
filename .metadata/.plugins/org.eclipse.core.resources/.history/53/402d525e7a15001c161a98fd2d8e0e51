@@ -10,7 +10,7 @@ public class MUsuario {
     private String usuario;
     private int rol;
     public MUsuario(){
-        cedula_usuario = new BigDecimal(0);
+        cedula_usuario = 0.0;
         email_usuario = "";
         nombre_usuario = "";
         password = "";
@@ -54,11 +54,5 @@ public class MUsuario {
     }
     public void setUsuario(String usuario) {
         this.usuario = usuario;
-    }
-    public int getRol() {
-    	return rol;
-    }
-    public void setRol(int rol) {
-    	this.rol = rol;
     }
 }

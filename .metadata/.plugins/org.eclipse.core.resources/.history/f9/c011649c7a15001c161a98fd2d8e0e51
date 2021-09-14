@@ -3,8 +3,6 @@ package Controlador.usuarios;
 import DAO.InterCRUD;
 import DAO.usuarioDAO;
 import Modelo.usuarios.MUsuario;
-
-import java.math.BigDecimal;
 import java.util.List;
 
 public class CUsuarios {
@@ -18,7 +16,7 @@ public class CUsuarios {
     public List<MUsuario> consultarTodos() {
     	return usuario.ConsultarTodos();
     }
-    public MUsuario Consultar(BigDecimal id) {
+    public MUsuario Consultar(int id) {
     	return usuario.Consultar(id);
     }
     public boolean actualizar(MUsuario objeto) {
