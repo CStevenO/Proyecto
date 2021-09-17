@@ -3,3 +3,5 @@
 1631570781497	Rename type 'modelDAO'
 1631570919951	Infer generic type arguments
 1631572071032	Delete element
+1631893733677	Rename resource 'img'
+1631893872870	Rename resource 'images'
