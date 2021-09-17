@@ -6,15 +6,23 @@ import java.sql.SQLException;
 
 public class DataConnection {
 	protected Connection conexion;
-    protected boolean conectar(){
-    	try {
-    		return true;
-    	}
-    	catch(Exception e) {
-    		return false;
-    	}
-    }
-    protected boolean desconectar(){
-    	return false;
-    }
+
+	
+	protected void conectar() {
+		  try {    
+	            Class.forName("com.mysql.cj.jdbc.Driver");      
+	            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/tienda18?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8", "root", "root");
+	        } catch (Exception e) {
+	        	System.out.println("error: "+e);
+	        }
+	    }
+		
+	 protected void desconectar() {
+	        try {
+	            conexion.close();
+	            
+	        } catch (Exception e) {
+	            System.out.println("error: "+e);
+	        }
+	 }
 }
