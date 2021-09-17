@@ -68,9 +68,13 @@ create table detalle_ventas(
     foreign key(codigo_venta) references ventas(codigo_venta)
 );
 
+SELECT * FROM usuarios;
+SELECT * FROM roles;
+
 drop table detalle_ventas;
 drop table ventas;
 drop table productos;
 drop table clientes;
 drop table proveedores;
 drop table usuarios;
+drop table roles;
