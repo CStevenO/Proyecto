@@ -1,4 +1,5 @@
-INDEX VERSION 1.4+C:\Users\zoote\OneDrive\Documentos\GitHub\Proyecto\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-95629751.index
-3980902601.index
-263265558.index
+INDEX VERSION 1.4+C:\Users\Steve\Documents\Eclipse\Tienda18\Proyecto\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1020947483.index
+3394646702.index
+2769765952.index
+760283917.index
