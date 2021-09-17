@@ -1,3 +1,4 @@
+create database tienda18;
 use tienda18;
 create table  clientes(
 	cedula_cliente bigint not null primary key,
