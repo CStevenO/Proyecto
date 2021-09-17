@@ -122,7 +122,7 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 		if(objeto != null) {
 			try {
 				conectar();
-				String tx = "DELETE FROM usuario where cedula_usuario=?";
+				String tx = "DELETE FROM usuarios WHERE cedula_usuario=?";
 				PreparedStatement sentencia = conexion.prepareStatement(tx);
 				sentencia.setBigDecimal(1, objeto.getCedula_usuario());
 				sentencia.executeUpdate();
@@ -134,6 +134,36 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public MUsuario Consultar(MUsuario objeto) {
+		if(objeto != null) {
+			try {
+				conectar();
+				String tx = "SELECT * FROM usuarios WHERE usuario=? and password=?";			
+				PreparedStatement sentencia = conexion.prepareStatement(tx);
+				sentencia.setString(1, objeto.getUsuario());
+				sentencia.setString(2, objeto.getPassword());
+				ResultSet datos = sentencia.executeQuery();
+				MUsuario usuario = new MUsuario();
+				if(datos.next()) {
+					usuario.setCedula_usuario(datos.getBigDecimal("cedula_usuario"));
+					usuario.setEmail_usuario(datos.getString("email_usuario"));
+					usuario.setNombre_usuario(datos.getString("nombre_usuario"));
+					usuario.setPassword(datos.getString("password"));
+					usuario.setUsuario(datos.getString("usuario"));
+					usuario.setRol(datos.getInt("rol"));
+				}
+				desconectar();
+				return usuario;
+			}
+			catch(Exception e) {
+				System.out.println(e);
+				return null;
+			}
+		}
+		return null;
 	}
 
 }

@@ -24,7 +24,10 @@ public class CUsuarios {
     public boolean actualizar(MUsuario objeto) {
     	return usuario.Actualizar(objeto);
     }
-    public boolean eliminar(MUsuario objecto) {
-    	return usuario.Eliminar(objecto);
+    public boolean eliminar(MUsuario objeto) {
+    	return usuario.Eliminar(objeto);
+    }
+    public MUsuario Consultar(MUsuario objeto) {
+    	return usuario.Consultar(objeto);
     }
 }
