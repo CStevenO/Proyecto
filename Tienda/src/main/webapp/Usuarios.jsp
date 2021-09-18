@@ -14,7 +14,7 @@
 
 </head>
 <body>
-<%MUsuario usuario = ((MUsuario)session.getAttribute("usuario")); 
+<%MUsuario usuario = (MUsuario)request.getAttribute("usuario"); 
 if(usuario == null){
 	usuario = new MUsuario();
 }
@@ -37,13 +37,13 @@ if(usuario == null){
                             <a class="nav-link active" aria-current="page" href="../Tienda/Menu.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="../Tienda/Usuarios.html">Usuarios</a>
+                            <a class="nav-link active" href="../Tienda/Usuarios.jsp">Usuarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="../Tienda/Clientes.html">Clientes</a>
+                            <a class="nav-link active" href="../Tienda/Clientes.jsp">Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="../Tienda/Proveedores.html">Proveedores</a>
+                            <a class="nav-link active" href="../Tienda/Proveedores.jsp">Proveedores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Productos</a>
@@ -72,7 +72,7 @@ if(usuario == null){
             </div>
         </nav>
     </main>
-	<form>
+	<form method="post">
 	    <div class="container pt-3">
 	        <div class="mb-3">
 	            <label for="texto_cedula" class="form-label">Cedula</label>

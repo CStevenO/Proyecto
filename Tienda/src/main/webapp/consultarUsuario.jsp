@@ -3,8 +3,10 @@
 <%@page import="java.math.BigDecimal" %>
 <%
 MUsuario usuario = new CUsuarios().Consultar(new BigDecimal(request.getParameter("texto_cedula_usuario")));
-//request.setAttribute("cedula", usuario.getCedula_usuario());
-//request.getRequestDispatcher("../Tienda/Usuario.jsp").forward(request, response);
-session.setAttribute("usuario", usuario);
+//session.setAttribute("usuario", usuario);
+//response.sendRedirect("../Tienda/Usuarios.jsp");
+System.out.println(usuario.getEmail_usuario());
+request.setAttribute("usuario", usuario);
+request.getRequestDispatcher("Usuarios.jsp").forward(request, response);
 response.sendRedirect("../Tienda/Usuarios.jsp");
 %>

@@ -17,14 +17,13 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 				conectar();
 				String tx = "INSERT INTO "
 						+ "usuarios (cedula_usuario,email_usuario,nombre_usuario,password,usuario,rol) "
-						+ "VALUES(?,?,?,?,?,?)";
+						+ "VALUES(?,?,?,?,?,2)";
 				PreparedStatement sentencia = conexion.prepareStatement(tx);
 				sentencia.setBigDecimal(1, objeto.getCedula_usuario());
 				sentencia.setString(2,objeto.getEmail_usuario());
 				sentencia.setString(3, objeto.getNombre_usuario());
 				sentencia.setString(4, objeto.getPassword());
 				sentencia.setString(5, objeto.getUsuario());
-				sentencia.setInt(6, objeto.getRol());
 				sentencia.executeUpdate();
 				desconectar();
 				return true;
@@ -99,15 +98,14 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 			try {
 				conectar();
 				String tx = "UPDATE usuarios SET "
-						+ "email_usuario=?, nombre_usuario=?, password=?, usuario=?, rol=?"
+						+ "email_usuario=?, nombre_usuario=?, password=?, usuario=?"
 						+ "where cedula_usuario=?";
 				PreparedStatement sentencia = conexion.prepareStatement(tx);
 				sentencia.setString(1, objeto.getEmail_usuario());
 				sentencia.setString(2, objeto.getNombre_usuario());
 				sentencia.setString(3, objeto.getPassword());
 				sentencia.setString(4, objeto.getUsuario());
-				sentencia.setInt(5, objeto.getRol());
-				sentencia.setBigDecimal(6, objeto.getCedula_usuario());
+				sentencia.setBigDecimal(5, objeto.getCedula_usuario());
 				sentencia.executeUpdate();
 				desconectar();
 				return true;
