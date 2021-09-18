@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="Modelo.usuarios.MUsuario"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,11 @@
 
 </head>
 <body>
+<%MUsuario usuario = ((MUsuario)session.getAttribute("usuario")); 
+if(usuario == null){
+	usuario = new MUsuario();
+}
+%>
 <main>
         <nav class="navbar navbar-expand-md navbar-light"
             style="background: linear-gradient(to right, #51ceff, #5980ff);" aria-label="Fourth navbar example">
@@ -71,19 +77,21 @@
 	        <div class="mb-3">
 	            <label for="texto_cedula" class="form-label">Cedula</label>
 	            <input type="text" class="form-control" id="texto_cedula"
-	                placeholder="Ingrese numero de documento de identidad" name="texto_cedula_usuario">
-	        </div>
+	                placeholder="Ingrese numero de documento de identidad" name="texto_cedula_usuario" value=<%=usuario.getCedula_usuario() %>>
 	        <div class="mb-3">
 	            <label for="texto_nombre" class="form-label">Nombre Completo</label>
-	            <input type="text" class="form-control" id="texto_nombre" placeholder="Ingrese Nombres y apellidos" name="texto_nombre_usuario">
+	            <input type="text" class="form-control" id="texto_nombre" placeholder="Ingrese Nombres y apellidos" name="texto_nombre_usuario"
+	            	value=<%=usuario.getNombre_usuario() %>>
 	        </div>
 	        <div class="mb-3">
 	            <label for="texto_correo" class="form-label">Correo Electronico</label>
-	            <input type="email" class="form-control" id="texto_correo" placeholder="Ingrese Correo Electronico" name="texto_correo_usuario">
+	            <input type="email" class="form-control" id="texto_correo" placeholder="Ingrese Correo Electronico" name="texto_correo_usuario"
+	            	value=<%=usuario.getEmail_usuario() %>>
 	        </div>
 	        <div class="mb-3">
 	            <label for="texto_usuario" class="form-label">Usuario</label>
-	            <input type="text" class="form-control" id="texto_usuario" placeholder="Ingrese Usuario" name="texto_usuario">
+	            <input type="text" class="form-control" id="texto_usuario" placeholder="Ingrese Usuario" name="texto_usuario"
+	            	value=<%=usuario.getUsuario() %>>
 	        </div>
 	        <div class="mb-3">
 	            <label for="texto_contra" class="form-label">Contraseña</label>
