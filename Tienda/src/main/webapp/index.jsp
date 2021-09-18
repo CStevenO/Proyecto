@@ -10,6 +10,7 @@
 </head>
 <body>
 	<%
+	//hola mundo
 	MUsuario usuario = new MUsuario();
 	usuario.setUsuario(request.getParameter("usuario"));
 	usuario.setPassword(request.getParameter("contrasena"));
