@@ -20,7 +20,6 @@ INDEX VERSION 1.131+C:\Users\Steve\Documents\Eclipse\Tienda18\Proyecto\.metadata
 1599943824.index
 2790644412.index
 3062918340.index
-1459376212.index
 1096675150.index
 3972659879.index
 2560989027.index
@@ -29,6 +28,7 @@ INDEX VERSION 1.131+C:\Users\Steve\Documents\Eclipse\Tienda18\Proyecto\.metadata
 962664411.index
 3110078348.index
 2668775528.index
+1934948834.index
 263265558.index
 1943265620.index
 4098486017.index
