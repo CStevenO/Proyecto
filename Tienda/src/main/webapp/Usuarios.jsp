@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +12,8 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
 </head>
-
 <body>
-    <main>
+<main>
         <nav class="navbar navbar-expand-md navbar-light"
             style="background: linear-gradient(to right, #51ceff, #5980ff);" aria-label="Fourth navbar example">
             <div class="container-fluid">
@@ -104,5 +105,5 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
 </body>
-
+</body>
 </html>

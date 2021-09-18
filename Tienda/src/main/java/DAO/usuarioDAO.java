@@ -50,7 +50,7 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 				usuario.setCedula_usuario(datos.getBigDecimal("cedula_usuario"));
 				usuario.setEmail_usuario(datos.getString("email_usuario"));
 				usuario.setNombre_usuario(datos.getString("nombre_usuario"));
-				usuario.setPassword(datos.getString(datos.getString("password")));
+				usuario.setPassword(datos.getString("password"));
 				usuario.setUsuario(datos.getString("usuario"));
 				usuario.setRol(datos.getInt("rol"));
 				usuarios.add(usuario);
@@ -77,7 +77,7 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 					usuario.setCedula_usuario(datos.getBigDecimal("cedula_usuario"));
 					usuario.setEmail_usuario(datos.getString("email_usuario"));
 					usuario.setNombre_usuario(datos.getString("nombre_usuario"));
-					usuario.setPassword(datos.getString(datos.getString("password")));
+					usuario.setPassword(datos.getString("password"));
 					usuario.setUsuario(datos.getString("usuario"));
 					usuario.setRol(datos.getInt("rol"));
 				}
@@ -85,9 +85,11 @@ public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 				return usuario;
 			}
 			catch(Exception e) {
+				System.out.println(e);
 				return null;
 			}
 		}
+		System.out.println("vacio");
 		return null;
 	}
 
