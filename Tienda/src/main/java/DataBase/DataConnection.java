@@ -20,6 +20,7 @@ protected Connection conexion;
     protected boolean desconectar(){
         try{
             conexion.close();
+            
             return true;
         }catch(Exception e){
             System.out.println("Error: "+e);
