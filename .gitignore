@@ -1,3 +1,4 @@
 .metadata/
-Tienda/src/main\java/DataBase/
-Tienda/build/classes/DataBase/
+Tienda/src/main/java/DataBase/DataConnection.java
+Tienda/build/classes/DataBase/DataConnection.class
+
