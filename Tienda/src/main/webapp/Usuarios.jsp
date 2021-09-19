@@ -11,40 +11,17 @@
     <title>Usuarios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 <jsp:include page="Menu.jsp"></jsp:include>
 <%MUsuario usuario = (MUsuario)request.getAttribute("usuario"); 
 if(usuario == null){
 	usuario = new MUsuario();
-}
-if(request.getAttribute("confirmacion")!=null){
-	boolean confirmacion = (boolean)request.getAttribute("confirmacion");
-	System.out.println(confirmacion);
-	if(confirmacion){
-		out.println("<script type=\"text/javascript\">");
-		out.println("alert('El usuario ha sido ingresado exitosamente');");
-		out.println("</script>");
-	}
-	else{
-		out.println("<script type=\"text/javascript\">");
-		out.println("alert('El usuario no ha sido ingresado');");
-		out.println("</script>");
-	}
-}
-if(request.getAttribute("borrar")!=null){
-	boolean borro = (boolean)request.getAttribute("borrar");
-	if(borro){
-		out.println("<script type=\"text/javascript\">");
-		out.println("alert('El usuario ha sido borrado exitosamente');");
-		out.println("</script>");
-	}
-	else{
-		out.println("<script type=\"text/javascript\">");
-		out.println("alert('El usuario no ha sido borrado');");
-		out.println("</script>");
-	}
 }
 %>
 	<form method="post">
@@ -82,9 +59,95 @@ if(request.getAttribute("borrar")!=null){
 	        </div>
 	    </div>
    </form>
-
-
-
+		<%
+		if(request.getAttribute("confirmacion")!=null){
+			boolean confirmacion = (boolean)request.getAttribute("confirmacion");
+			if(confirmacion){
+				%>
+				<div align='center'>
+					<div class="toast">
+				    	<div class="toast-header">
+				      		<strong class="mr-auto text-primary">Ingresar</strong>
+				      		<small class="text-muted">Base de datos</small>
+				    	</div>
+				    	<div class="toast-body">
+				      		El usuario ha sido ingresado exitosamente.
+				    	</div>
+				  	</div>
+				  	<script>
+						$(document).ready(function(){
+						  $('.toast').toast('show');
+						});
+				 	</script>
+			 	</div>
+			  <% 
+			}
+			else{
+				%>
+				<div align='center'>
+					<div class="toast">
+					    <div class="toast-header">
+					      <strong class="mr-auto text-primary">Ingresar</strong>
+					      <small class="text-muted">Base de datos</small>
+					    </div>
+					    <div class="toast-body">
+					      El usuario no ha sido ingresado.
+					    </div>
+					  </div>
+					  <script>
+						$(document).ready(function(){
+						  $('.toast').toast('show');
+						});
+				 	  </script>
+			 	  </div>
+			  <% 
+			}
+		}
+		if(request.getAttribute("borrar")!=null){
+			boolean borro = (boolean)request.getAttribute("borrar");
+			if(borro){
+				%>
+				<div align='center'>
+					<div class="toast">
+					    <div class="toast-header">
+					      	<strong class="mr-auto text-primary">Borrar</strong>
+					      	<small class="text-muted">Base de datos</small>
+					    </div>
+					    <div class="toast-body">
+					      	El usuario ha sido borrado exitosamente.
+					    </div>
+					  </div>
+					  <script>
+							$(document).ready(function(){
+						 	 $('.toast').toast('show');
+							});
+				 	  </script>
+		 	 	</div>
+			  <% 
+			}
+			else{
+				%>
+				<div align='center'>
+					<div class="toast">
+					    <div class="toast-header">
+					      	<strong class="mr-auto text-primary">Borrar</strong>
+					      	<small class="text-muted">Base de datos</small>
+					    </div>
+					    <div class="toast-body">
+					      	El usuario no ha sido borrado.
+					    </div>
+					  </div>
+					  <script>
+							$(document).ready(function(){
+						 	 $('.toast').toast('show');
+							});
+				 	  </script>
+			 	 </div>
+			 	 
+			  <% 
+			}
+		}
+		%>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
