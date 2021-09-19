@@ -33,6 +33,19 @@ if(request.getAttribute("confirmacion")!=null){
 		out.println("</script>");
 	}
 }
+if(request.getAttribute("borrar")!=null){
+	boolean borro = (boolean)request.getAttribute("borrar");
+	if(borro){
+		out.println("<script type=\"text/javascript\">");
+		out.println("alert('El usuario ha sido borrado exitosamente');");
+		out.println("</script>");
+	}
+	else{
+		out.println("<script type=\"text/javascript\">");
+		out.println("alert('El usuario no ha sido borrado');");
+		out.println("</script>");
+	}
+}
 %>
 	<form method="post">
 	    <div class="container pt-3">
@@ -65,7 +78,7 @@ if(request.getAttribute("confirmacion")!=null){
 	            <button class="btn btn-primary" type="submit" name="boton_consultar_usuario" formaction="../Tienda/consultarUsuario.jsp">Consultar</button>
 	            <button class="btn btn-success" type="submit" name="boton_crear_usuario" formaction="../Tienda/crearUsuario.jsp">Crear</button>
 	            <button class="btn btn-info" type="submit" name="boton_actualizar_usuario">Actualizar</button>
-	            <button class="btn btn-danger" type="submit" name="boton_borrar_usuario">Borrar</button>
+	            <button class="btn btn-danger" type="submit" name="boton_borrar_usuario" formaction="../Tienda/borrarUsuario.jsp">Borrar</button>
 	        </div>
 	    </div>
    </form>
