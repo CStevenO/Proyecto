@@ -23,30 +23,14 @@ if(request.getAttribute("confirmacion")!=null){
 	boolean confirmacion = (boolean)request.getAttribute("confirmacion");
 	System.out.println(confirmacion);
 	if(confirmacion){
-		%>
-		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-		  <div class="toast-header">
-		    <strong class="me-auto">Ingreso Usuario</strong>
-		    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-		  </div>
-		  <div class="toast-body">
-		    El usuario ha sido ingresado exitosamente
-		  </div>
-		</div>
-		<% 
+		out.println("<script type=\"text/javascript\">");
+		out.println("alert('El usuario ha sido ingresado exitosamente');");
+		out.println("</script>");
 	}
 	else{
-		%>
-		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-		  <div class="toast-header">
-		    <strong class="me-auto">Ingreso Usuario</strong>
-		    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-		  </div>
-		  <div class="toast-body">
-		    El usuario no ha sido ingresado
-		  </div>
-		</div>
-		<% 
+		out.println("<script type=\"text/javascript\">");
+		out.println("alert('El usuario no ha sido ingresado');");
+		out.println("</script>");
 	}
 }
 %>

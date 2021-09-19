@@ -13,16 +13,11 @@
 
 </head>
 <body>
-	<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-	  <div class="toast-header">
-	    <strong class="me-auto">Bootstrap</strong>
-	    <small class="text-muted">11 mins ago</small>
-	    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-	  </div>
-	  <div class="toast-body">
-	    Hello, world! This is a toast message.
-	  </div>
-	</div>
+	<%
+	out.println("<script type=\"text/javascript\">");
+	out.println("alert('user');");
+	out.println("</script>");
+	%>
 	
 	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
