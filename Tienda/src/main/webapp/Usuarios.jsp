@@ -21,11 +21,11 @@ if(usuario == null){
 }
 if(request.getAttribute("confirmacion")!=null){
 	boolean confirmacion = (boolean)request.getAttribute("confirmacion");
+	System.out.println(confirmacion);
 	if(confirmacion){
 		%>
 		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
 		  <div class="toast-header">
-		    <img src="..." class="rounded me-2" alt="...">
 		    <strong class="me-auto">Ingreso Usuario</strong>
 		    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
 		  </div>
@@ -39,7 +39,6 @@ if(request.getAttribute("confirmacion")!=null){
 		%>
 		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
 		  <div class="toast-header">
-		    <img src="..." class="rounded me-2" alt="...">
 		    <strong class="me-auto">Ingreso Usuario</strong>
 		    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
 		  </div>
@@ -51,7 +50,6 @@ if(request.getAttribute("confirmacion")!=null){
 	}
 }
 %>
-
 	<form method="post">
 	    <div class="container pt-3">
 	        <div class="mb-3">

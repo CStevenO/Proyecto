@@ -17,7 +17,6 @@
 	boolean carga = new CUsuarios().insertar(usuario);
 	request.setAttribute("confirmacion", carga);
 	request.getRequestDispatcher("Usuarios.jsp").forward(request, response);
-	response.sendRedirect("../Tienda/Usuarios.jsp");
 	%>
 </body>
 </html>
