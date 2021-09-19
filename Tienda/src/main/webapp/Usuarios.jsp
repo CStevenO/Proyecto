@@ -19,6 +19,37 @@
 if(usuario == null){
 	usuario = new MUsuario();
 }
+if(request.getAttribute("confirmacion")!=null){
+	boolean confirmacion = (boolean)request.getAttribute("confirmacion");
+	if(confirmacion){
+		%>
+		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+		  <div class="toast-header">
+		    <img src="..." class="rounded me-2" alt="...">
+		    <strong class="me-auto">Ingreso Usuario</strong>
+		    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+		  </div>
+		  <div class="toast-body">
+		    El usuario ha sido ingresado exitosamente
+		  </div>
+		</div>
+		<% 
+	}
+	else{
+		%>
+		<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+		  <div class="toast-header">
+		    <img src="..." class="rounded me-2" alt="...">
+		    <strong class="me-auto">Ingreso Usuario</strong>
+		    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+		  </div>
+		  <div class="toast-body">
+		    El usuario no ha sido ingresado
+		  </div>
+		</div>
+		<% 
+	}
+}
 %>
 
 	<form method="post">
@@ -50,7 +81,7 @@ if(usuario == null){
 	
 	        <div class="d-grid gap-3 d-md-block">
 	            <button class="btn btn-primary" type="submit" name="boton_consultar_usuario" formaction="../Tienda/consultarUsuario.jsp">Consultar</button>
-	            <button class="btn btn-success" type="submit" name="boton_crear_usuario">Crear</button>
+	            <button class="btn btn-success" type="submit" name="boton_crear_usuario" formaction="../Tienda/crearUsuario.jsp">Crear</button>
 	            <button class="btn btn-info" type="submit" name="boton_actualizar_usuario">Actualizar</button>
 	            <button class="btn btn-danger" type="submit" name="boton_borrar_usuario">Borrar</button>
 	        </div>
