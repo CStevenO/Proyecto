@@ -54,7 +54,7 @@ if(usuario == null){
 	        <div class="d-grid gap-3 d-md-block">
 	            <button class="btn btn-primary" type="submit" name="boton_consultar_usuario" formaction="../Tienda/consultarUsuario.jsp">Consultar</button>
 	            <button class="btn btn-success" type="submit" name="boton_crear_usuario" formaction="../Tienda/crearUsuario.jsp">Crear</button>
-	            <button class="btn btn-info" type="submit" name="boton_actualizar_usuario">Actualizar</button>
+	            <button class="btn btn-info" type="submit" name="boton_actualizar_usuario" formaction="../Tienda/actualizarUsuario.jsp">Actualizar</button>
 	            <button class="btn btn-danger" type="submit" name="boton_borrar_usuario" formaction="../Tienda/borrarUsuario.jsp">Borrar</button>
 	        </div>
 	    </div>
@@ -147,7 +147,54 @@ if(usuario == null){
 			  <% 
 			}
 		}
+		if(request.getAttribute("actualizar")!=null){
+			boolean actualizo = (boolean)request.getAttribute("actualizar");
+			if(actualizo){
 		%>
+		<div align='center'>
+					<div class="toast">
+					    <div class="toast-header">
+					      	<strong class="mr-auto text-primary">Borrar</strong>
+					      	<small class="text-muted">Base de datos</small>
+					    </div>
+					    <div class="toast-body">
+					      	El usuario ha sido actualizado exitosamente.
+					    </div>
+					  </div>
+					  <script>
+							$(document).ready(function(){
+						 	 $('.toast').toast('show');
+							});
+				 	  </script>
+		 	 	</div>
+		
+		<%
+			}
+			else{
+		%>
+		<div align='center'>
+					<div class="toast">
+					    <div class="toast-header">
+					      	<strong class="mr-auto text-primary">Borrar</strong>
+					      	<small class="text-muted">Base de datos</small>
+					    </div>
+					    <div class="toast-body">
+					      	El usuario no ha sido actualizado.
+					    </div>
+					  </div>
+					  <script>
+							$(document).ready(function(){
+						 	 $('.toast').toast('show');
+							});
+				 	  </script>
+			 	 </div>
+	 	 <%
+			}
+		}
+	 	 
+	 	 %>
+		
+		
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>

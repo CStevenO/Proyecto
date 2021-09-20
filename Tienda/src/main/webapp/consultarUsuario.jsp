@@ -7,5 +7,5 @@ MUsuario usuario = new CUsuarios().Consultar(new BigDecimal(request.getParameter
 //response.sendRedirect("../Tienda/Usuarios.jsp");
 request.setAttribute("usuario", usuario);
 request.getRequestDispatcher("Usuarios.jsp").forward(request, response);
-response.sendRedirect("../Tienda/Usuarios.jsp");
+//response.sendRedirect("../Tienda/Usuarios.jsp");
 %>
