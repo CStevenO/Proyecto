@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="Modelo.usuarios.MUsuario"%>
+<%@page import="java.math.BigDecimal"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +30,7 @@ if(usuario == null){
 	        <div class="mb-3">
 	            <label for="texto_cedula" class="form-label">Cedula</label>
 	            <input type="text" class="form-control" id="texto_cedula"
-	                placeholder="Ingrese numero de documento de identidad" name="texto_cedula_usuario" value=<%=usuario.getCedula_usuario() %>>
+	                placeholder="Ingrese numero de documento de identidad" name="texto_cedula_usuario" value=<%=usuario.getCedula_usuario()%> required>
 	        </div>        
 	        <div class="mb-3">
 	            <label for="texto_nombre" class="form-label">Nombre Completo</label>
@@ -154,7 +155,7 @@ if(usuario == null){
 		<div align='center'>
 					<div class="toast">
 					    <div class="toast-header">
-					      	<strong class="mr-auto text-primary">Borrar</strong>
+					      	<strong class="mr-auto text-primary">Actualizar</strong>
 					      	<small class="text-muted">Base de datos</small>
 					    </div>
 					    <div class="toast-body">
@@ -175,7 +176,7 @@ if(usuario == null){
 		<div align='center'>
 					<div class="toast">
 					    <div class="toast-header">
-					      	<strong class="mr-auto text-primary">Borrar</strong>
+					      	<strong class="mr-auto text-primary">Actualizar</strong>
 					      	<small class="text-muted">Base de datos</small>
 					    </div>
 					    <div class="toast-body">
@@ -191,8 +192,49 @@ if(usuario == null){
 	 	 <%
 			}
 		}
-	 	 
-	 	 %>
+		if(request.getAttribute("error")!=null){
+			String error = (String)request.getAttribute("error");
+		%>
+		<div align='center'>
+					<div class="toast">
+					    <div class="toast-header">
+					      	<strong class="mr-auto text-primary">Error</strong>
+					      	<small class="text-muted">Base de datos</small>
+					    </div>
+					    <div class="toast-body">
+					      	<%=error %>
+					    </div>
+					  </div>
+					  <script>
+							$(document).ready(function(){
+						 	 $('.toast').toast('show');
+							});
+				 	  </script>
+		 	 	</div>
+ 	 	<% 
+		}
+		if(request.getAttribute("vacios")!=null){
+			String error = (String)request.getAttribute("vacios");
+		%>
+		<div align='center'>
+					<div class="toast">
+					    <div class="toast-header">
+					      	<strong class="mr-auto text-primary">Error</strong>
+					      	<small class="text-muted">Base de datos</small>
+					    </div>
+					    <div class="toast-body">
+					      	<%=error %>
+					    </div>
+					  </div>
+					  <script>
+							$(document).ready(function(){
+						 	 $('.toast').toast('show');
+							});
+				 	  </script>
+		 	 	</div>
+ 	 	<% 
+		}
+ 	 	%>
 		
 		
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"

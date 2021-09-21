@@ -9,6 +9,7 @@ public class MUsuario {
     private String password;
     private String usuario;
     private int rol;
+    private String vacios;
     public MUsuario(){
         cedula_usuario = new BigDecimal(0);
         email_usuario = "";
@@ -25,6 +26,29 @@ public class MUsuario {
         this.usuario = usuario;
         this.rol = rol;
     }
+    public boolean areThereEmpties() {
+    	if(email_usuario == "" || nombre_usuario == "" || password == "" || usuario == "") {
+    		vacios = "";
+    		if(nombre_usuario == "") {
+    			vacios += " Nombre Completo,";
+    		}
+    		if(email_usuario == "") {
+    			vacios += " Correo Electronico,";
+    		}
+    		if(usuario == "") {
+    			vacios += " Usuario,";
+    		}
+    		if(password == "") {
+    			vacios += " Contraseña,";
+    		}
+    		vacios += " estan vacios";
+    		return true;
+    	}
+    	return false;
+    }
+    public String getVacios() {
+		return vacios;
+	}
     public BigDecimal getCedula_usuario() {
         return cedula_usuario;
     }
