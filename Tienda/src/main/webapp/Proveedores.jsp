@@ -33,7 +33,7 @@
         </div>
         <div class="mb-3">
             <label for="texto_telefono" class="form-label">Telefono</label>
-            <input type="text" class="form-control" id="texto_telefono" placeholder="Ingrese Telefono del proveedor"name="texto_telefono_proveedor">
+            <input type="tel" class="form-control" id="texto_telefono" placeholder="Ingrese Telefono del proveedor"name="texto_telefono_proveedor">
         </div>
         <div class="mb-3">
             <label for="texto_ciudad" class="form-label">Ciudad</label>
