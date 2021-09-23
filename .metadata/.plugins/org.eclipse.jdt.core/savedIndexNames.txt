@@ -19,7 +19,6 @@ INDEX VERSION 1.131+C:\Users\Steve\Documents\Eclipse\Tienda18\Proyecto\.metadata
 398454040.index
 1934948834.index
 1914931476.index
-1459376212.index
 4013674241.index
 814390734.index
 410955898.index
