@@ -20,8 +20,8 @@
 <div class="container pt-3">
         <div class="mb-3">
             <label for="texto_NIT" class="form-label">NIT</label>
-            <input type="text" class="form-control" id="texto_NIT"
-                placeholder="Ingrese el Numero de Identificacion Tributaria del proveedor" name="texto_NIT_proveedor">
+            <input type="number" class="form-control" id="texto_NIT"
+                placeholder="Ingrese el Numero de Identificacion Tributaria del proveedor" name="texto_NIT_proveedor" required>
         </div>
         <div class="mb-3">
             <label for="texto_proveedor" class="form-label">Nombre Proveedor</label>

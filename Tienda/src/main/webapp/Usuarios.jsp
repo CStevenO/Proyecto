@@ -28,7 +28,7 @@ if(usuario == null){
 	    <div class="container pt-3">
 	        <div class="mb-3">
 	            <label for="texto_cedula" class="form-label">Cedula</label>
-	            <input type="text" class="form-control" id="texto_cedula"
+	            <input type="number" class="form-control" id="texto_cedula"
 	                placeholder="Ingrese numero de documento de identidad" name="texto_cedula_usuario" value=<%=usuario.getCedula_usuario()%> required>
 	        </div>        
 	        <div class="mb-3">
