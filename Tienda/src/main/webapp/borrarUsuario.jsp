@@ -1,5 +1,5 @@
-<%@page import="Modelo.usuarios.MUsuario"%>
-<%@page import="Controlador.usuarios.CUsuarios"%>
+<%@page import="Modelo.MUsuario"%>
+<%@page import="Controlador.CUsuarios"%>
 <%@page import="java.math.BigDecimal" %>
 <%
 try{

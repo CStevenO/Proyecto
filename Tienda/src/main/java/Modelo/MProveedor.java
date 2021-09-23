@@ -1,4 +1,4 @@
-package Modelo.proveedores;
+package Modelo;
 
 import java.math.BigDecimal;
 
@@ -8,6 +8,7 @@ public class MProveedor {
 	private String direccion_proveedor;
 	private String nombre_proveedor;
 	private String telefono_proveedor;
+	private String vacios;
 	public MProveedor() {
 		nit_proveedor = new BigDecimal(0);
 		ciudad_proveedor = "";
@@ -21,6 +22,29 @@ public class MProveedor {
 		this.direccion_proveedor = direccion_proveedor;
 		this.nombre_proveedor = nombre_proveedor;
 		this.telefono_proveedor = telefono_proveedor;
+	}
+	public boolean areThereEmpties() {
+    	if(ciudad_proveedor == "" || direccion_proveedor == "" || nombre_proveedor == "" || telefono_proveedor == "") {
+    		vacios = "";
+    		if(nombre_proveedor == "") {
+    			vacios += " Nombre Proveedor,";
+    		}
+    		if(direccion_proveedor == "") {
+    			vacios += " Dirección,";
+    		}
+    		if(telefono_proveedor == "") {
+    			vacios += " Telefono,";
+    		}
+    		if(ciudad_proveedor == "") {
+    			vacios += " Ciudad,";
+    		}
+    		vacios += " estan vacios";
+    		return true;
+    	}
+    	return false;
+    }
+    public String getVacios() {
+		return vacios;
 	}
 	public BigDecimal getNit_proveedor() {
 		return nit_proveedor;

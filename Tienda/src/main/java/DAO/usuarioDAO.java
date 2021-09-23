@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import DataBase.DataConnection;
-import Modelo.usuarios.MUsuario;
+import Modelo.MUsuario;
 
 public class usuarioDAO extends DataConnection implements InterCRUD<MUsuario> {
 	@Override

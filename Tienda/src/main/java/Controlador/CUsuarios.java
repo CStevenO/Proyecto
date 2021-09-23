@@ -1,8 +1,8 @@
-package Controlador.usuarios;
+package Controlador;
 
 import DAO.InterCRUD;
 import DAO.usuarioDAO;
-import Modelo.usuarios.MUsuario;
+import Modelo.MUsuario;
 
 import java.math.BigDecimal;
 import java.util.List;

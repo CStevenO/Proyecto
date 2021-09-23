@@ -1,10 +1,10 @@
-package Controlador.clientes;
+package Controlador;
 
 import java.math.BigDecimal;
 import java.util.List;
 import DAO.InterCRUD;
 import DAO.clienteDAO;
-import Modelo.clientes.MCliente;
+import Modelo.MCliente;
 
 public class CClientes {
 	InterCRUD<MCliente> cliente;

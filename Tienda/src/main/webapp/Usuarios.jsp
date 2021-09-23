@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="Modelo.usuarios.MUsuario"%>
+<%@page import="Modelo.MUsuario"%>
 <%@page import="java.math.BigDecimal"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios</title>
@@ -29,22 +29,22 @@ if(usuario == null){
 	        <div class="mb-3">
 	            <label for="texto_cedula" class="form-label">Cedula</label>
 	            <input type="number" class="form-control" id="texto_cedula"
-	                placeholder="Ingrese numero de documento de identidad" name="texto_cedula_usuario" value=<%=usuario.getCedula_usuario()%> required>
+	                placeholder="Ingrese numero de documento de identidad" name="texto_cedula_usuario" value="<%=usuario.getCedula_usuario()%>" required>
 	        </div>        
 	        <div class="mb-3">
 	            <label for="texto_nombre" class="form-label">Nombre Completo</label>
 	            <input type="text" class="form-control" id="texto_nombre" placeholder="Ingrese Nombres y apellidos" name="texto_nombre_usuario"
-	            	value=<%=usuario.getNombre_usuario() %>>
+	            	value="<%=usuario.getNombre_usuario() %>">
 	        </div>
 	        <div class="mb-3">
 	            <label for="texto_correo" class="form-label">Correo Electronico</label>
 	            <input type="email" class="form-control" id="texto_correo" placeholder="Ingrese Correo Electronico" name="texto_correo_usuario"
-	            	value=<%=usuario.getEmail_usuario() %>>
+	            	value="<%=usuario.getEmail_usuario() %>">
 	        </div>
 	        <div class="mb-3">
 	            <label for="texto_usuario" class="form-label">Usuario</label>
 	            <input type="text" class="form-control" id="texto_usuario" placeholder="Ingrese Usuario" name="texto_usuario"
-	            	value=<%=usuario.getUsuario() %>>
+	            	value="<%=usuario.getUsuario() %>">
 	        </div>
 	        <div class="mb-3">
 	            <label for="texto_contra" class="form-label">Contraseña</label>

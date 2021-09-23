@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import DataBase.DataConnection;
-import Modelo.proveedores.MProveedor;
+import Modelo.MProveedor;
 
 public class proveedorDAO extends DataConnection implements InterCRUD<MProveedor>{
 	@Override

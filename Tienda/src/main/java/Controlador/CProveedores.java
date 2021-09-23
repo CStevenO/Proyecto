@@ -1,11 +1,11 @@
-package Controlador.proveedores;
+package Controlador;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 import DAO.InterCRUD;
 import DAO.proveedorDAO;
-import Modelo.proveedores.MProveedor;
+import Modelo.MProveedor;
 
 public class CProveedores {
 	InterCRUD<MProveedor> proveedor;

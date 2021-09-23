@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="Modelo.usuarios.MUsuario"%>
-<%@page import="Controlador.usuarios.CUsuarios"%>
+<%@page import="Modelo.MUsuario"%>
+<%@page import="Controlador.CUsuarios"%>
 <!DOCTYPE html>
 <html>
 <head>
