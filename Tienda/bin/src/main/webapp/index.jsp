@@ -10,6 +10,7 @@
 </head>
 <body>
 	<%
+	//hola mundo
 	MUsuario usuario = new MUsuario();
 	usuario.setUsuario(request.getParameter("usuario"));
 	usuario.setPassword(request.getParameter("contrasena"));
@@ -17,7 +18,8 @@
 	if(usuario1 != null){
 		if(usuario1.getUsuario() != ""){
 			out.println(usuario1.getEmail_usuario());
-			response.sendRedirect("../Tienda/Menu.html");
+			session.setAttribute("rol", usuario1.getRol());
+			response.sendRedirect("../Tienda/Inicio.jsp");
 		}
 		else{
 			out.println(usuario.getEmail_usuario());
