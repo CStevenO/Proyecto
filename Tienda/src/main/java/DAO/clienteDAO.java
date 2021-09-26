@@ -127,7 +127,20 @@ public class clienteDAO extends DataConnection implements InterCRUD<MCliente> {
 
 	@Override
 	public boolean Eliminar(MCliente objeto) {
-		// TODO Auto-generated method stub
+		if(objeto != null) {
+			try {
+				conectar();
+				String tx = "DELETE FROM clientes WHERE cedula_cliente=?";
+				PreparedStatement sentencia = conexion.prepareStatement(tx);
+				sentencia.setBigDecimal(1, objeto.getCedula_cliente());
+				sentencia.executeUpdate();
+				desconectar();
+				return true;
+			}
+			catch(Exception e) {
+				return false;
+			}
+		}
 		return false;
 	}
 	
